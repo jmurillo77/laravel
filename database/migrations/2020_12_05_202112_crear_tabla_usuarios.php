@@ -14,10 +14,11 @@ class CrearTablaUsuarios extends Migration
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('IdUsuario');
-            $table->integer('IdPersona');
+            $table->increments('IdUsuario');
             $table->string('Usuario',25);
             $table->string('Clave',100);
+            $table->unsignedInteger('IdPersona');
+            $table->foreign('IdPersona','fk_Usuario_Persona')->references('IdPersona')->on('personas')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }
