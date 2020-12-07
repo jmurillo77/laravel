@@ -15,7 +15,7 @@ class CrearTablaUsuarios extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('IdUsuario');
-            $table->string('Usuario',25);
+            $table->string('Usuario',25)->unique();
             $table->string('Clave',100);
             $table->unsignedInteger('IdPersona');
             $table->foreign('IdPersona','fk_Usuario_Persona')->references('IdPersona')->on('personas')->onDelete('restrict')->onUpdate('restrict');

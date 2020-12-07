@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CrearTablaRoles extends Migration
+class CrearTablaCanton extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CrearTablaRoles extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->increments('IdRol');
+        Schema::create('canton', function (Blueprint $table) {
+            $table->increments('IdCanton');
             $table->string('Nombre',50)->unique();
+            $table->unsignedInteger('IdProvincia');
+            $table->foreign('IdProvincia','fk_Canton_Provincia')->references('IdProvincia')->on('provincia')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CrearTablaRoles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('canton');
     }
 }
