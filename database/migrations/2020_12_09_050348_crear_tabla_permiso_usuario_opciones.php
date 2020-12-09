@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CrearTablaUsuarioRol extends Migration
+class CrearTablaPermisoUsuarioOpciones extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CrearTablaUsuarioRol extends Migration
      */
     public function up()
     {
-        Schema::create('usuario_rol', function (Blueprint $table) {
-            $table->increments('Id');
+        Schema::create('permiso_usuario_opciones', function (Blueprint $table) {
+            $table->id();
             $table->unsignedInteger('IdUsuario');
-            $table->foreign('IdUsuario','fk_UsuarioRol_Usuarios')->references('IdUsuario')->on('usuarios')->onDelete('restrict')->onUpdate('restrict');
-            $table->unsignedInteger('IdRol');
-            $table->foreign('IdRol','fk_UsuarioRol_Roles')->references('IdRol')->on('roles')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('IdUsuario','fk_PermisoUsuarioOpcion_Usuario')->references('IdUsuario')->on('usuarios')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedInteger('IdOpcion');
+            $table->foreign('IdOpcion','fk_PermisoUsuarioOpcion_Opcion')->references('IdOpcion')->on('opciones')->onDelete('restrict')->onUpdate('restrict');
             $table->boolean('Estado');
             $table->timestamps();
             $table->charset = 'utf8mb4';
@@ -33,6 +33,6 @@ class CrearTablaUsuarioRol extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario_rol');
+        Schema::dropIfExists('permiso_usuario_opciones');
     }
 }

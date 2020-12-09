@@ -24,6 +24,8 @@ class CrearTablaPrestamoLibro extends Migration
             $table->date('FechaDevolución')->nullable();
             $table->boolean('Estado');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

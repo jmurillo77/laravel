@@ -20,6 +20,8 @@ class CrearTablaUsuarios extends Migration
             $table->unsignedInteger('IdPersona');
             $table->foreign('IdPersona','fk_Usuario_Persona')->references('IdPersona')->on('personas')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

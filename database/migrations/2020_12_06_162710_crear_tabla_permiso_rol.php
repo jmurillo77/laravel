@@ -20,6 +20,8 @@ class CrearTablaPermisoRol extends Migration
             $table->unsignedInteger('IdPermiso');
             $table->foreign('IdPermiso','fk_PermisoRol_Permiso')->references('IdPermiso')->on('permisos')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

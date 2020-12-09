@@ -19,6 +19,8 @@ class CrearTablaProvincia extends Migration
             $table->unsignedInteger('IdPais');
             $table->foreign('IdPais','fk_Provincia_Pais')->references('IdPais')->on('pais')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

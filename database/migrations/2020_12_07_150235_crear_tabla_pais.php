@@ -19,6 +19,8 @@ class CrearTablaPais extends Migration
             $table->unsignedInteger('IdContinente');
             $table->foreign('IdContinente','fk_Pais_Continente')->references('IdContinente')->on('continente')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

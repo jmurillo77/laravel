@@ -19,6 +19,8 @@ class CrearTablaCanton extends Migration
             $table->unsignedInteger('IdProvincia');
             $table->foreign('IdProvincia','fk_Canton_Provincia')->references('IdProvincia')->on('provincia')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
