@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             'canton',
             'telefono_tipo_operadora',
             'telefono_tipo_dispositivo',
-            'campania_tipo'
+            'campania_tipo',
+            'modulos'
         ]);
         $this->call(ContinenteSeeder::class);
         $this->call(PaisSeeder::class);
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TipoOperadoraSeeder::class);
         $this->call(TipoDispositivoSeeder::class);
         $this->call(TipoCampaniaSeeder::class);
+        $this->call(ModuloSeeder::class);
     }
 
     protected function truncateTablas(array $tablas){
