@@ -18,6 +18,9 @@ Route::get('/', 'InicioController@index');
 
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function(){
+    Route::get('modulo','ModuloController@index')->name('modulo');
+    Route::get('modulo/crear','ModuloController@crear')->name('crear_modulo');
+    
     Route::get('permiso','PermisoController@index')->name('permiso');
     Route::get('permiso/crear','PermisoController@crear')->name('crear_permiso');
 });

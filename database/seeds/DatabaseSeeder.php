@@ -16,12 +16,18 @@ class DatabaseSeeder extends Seeder
             'continente',
             'pais',
             'provincia',
-            'canton'
+            'canton',
+            'telefono_tipo_operadora',
+            'telefono_tipo_dispositivo',
+            'campania_tipo'
         ]);
         $this->call(ContinenteSeeder::class);
         $this->call(PaisSeeder::class);
         $this->call(ProvinciaSeeder::class);
         $this->call(CantonSeeder::class);
+        $this->call(TipoOperadoraSeeder::class);
+        $this->call(TipoDispositivoSeeder::class);
+        $this->call(TipoCampaniaSeeder::class);
     }
 
     protected function truncateTablas(array $tablas){

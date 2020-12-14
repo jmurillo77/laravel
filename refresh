@@ -1,0 +1,22 @@
+Migrating: 2020_12_10_171716_crear_tabla_telefono_operadora_dispositivo
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'telefono_operadora_dispositivo' already exists (SQL: create table `telefono_operadora_dispositivo` (`IdOperadora` int unsigned not null, `IdDispositivo` int unsigned not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_spanish_ci')
+
+  at D:\jmurillo\GDriveJM\laragon\www\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php:671
+    667|         // If an exception occurs when attempting to run a query, we'll format the error
+    668|         // message to include the bindings with SQL, which will make this exception a
+    669|         // lot more helpful to the developer instead of just the database's errors.
+    670|         catch (Exception $e) {
+  > 671|             throw new QueryException(
+    672|                 $query, $this->prepareBindings($bindings), $e
+    673|             );
+    674|         }
+    675|
+
+  1   D:\jmurillo\GDriveJM\laragon\www\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php:464
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'telefono_operadora_dispositivo' already exists")
+
+  2   D:\jmurillo\GDriveJM\laragon\www\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php:464
+      PDOStatement::execute()
